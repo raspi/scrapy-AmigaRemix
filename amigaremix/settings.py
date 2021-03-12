@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 BOT_NAME = 'amigaremix'
 
 SPIDER_MODULES = ['amigaremix.spiders']
@@ -73,7 +75,7 @@ ITEM_PIPELINES = {
 # Enable and configure HTTP caching (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
 HTTPCACHE_ENABLED = True
-HTTPCACHE_EXPIRATION_SECS = 0
+HTTPCACHE_EXPIRATION_SECS = int(timedelta(hours=6).total_seconds())
 HTTPCACHE_DIR = 'httpcache'
 HTTPCACHE_IGNORE_HTTP_CODES = []
 HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
